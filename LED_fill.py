@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# standard 8 LED
+# light running back and forth
 import RPi.GPIO as GPIO
 import time
  
@@ -13,13 +13,12 @@ def setup():
  
 def loop(interval, reverse):
     if reverse == False:
-        #while True:
         for pin in pins:
             GPIO.output(pin, GPIO.LOW) 
             time.sleep(interval)
             GPIO.output(pin, GPIO.HIGH)
+
     else:
-        #while True:
         for pin in reversed(pins):
             GPIO.output(pin, GPIO.LOW) 
             time.sleep(interval)
